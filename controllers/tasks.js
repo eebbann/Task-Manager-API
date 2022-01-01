@@ -1,11 +1,11 @@
 const getAllTasks = (req, res) => {
-	res.send('get all tasks that are not completed');
+	res.send('get all tasks here');
 }
 const createTask = (req, res) => {
-	res.send('create a new task');
+	res.json(req.body);
 }
 const getTask = (req, res) => {
-	res.send('get a task by id');
+	res.json({id:req.params.id});
 }
 const updateTask = (req, res) => {
 	res.send('update a task by id');
