@@ -1,6 +1,7 @@
 const express = require ('express');
 const app = express();
 const task = require('./routes/tasks');
+const connectDB = require('./db/connect');
 
 app.use(express.json())
 app.get('/', (req, res) => {
@@ -9,6 +10,13 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/tasks',task);
 
+const start = async () => {
+	try {
+		await connectDB();
+app.listen(3100,  console.log('server listening 3100'));
+	} catch (error) {
+		console.log(error);
+	}
+}
 
-app.listen(3100, () => {console.log('server listening')}
-)
+start();
