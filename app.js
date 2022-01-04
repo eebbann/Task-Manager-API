@@ -14,7 +14,7 @@ app.use('/api/v1/tasks',task);
 const start = async () => {
 	try {
 		await connectDB(process.env.MONGO_URI);
-app.listen(3100,  console.log('server listening 3100'));
+        app.listen(3100,  console.log('server listening 3100'));
 	} catch (error) {
 		console.log(error);
 	}
